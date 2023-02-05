@@ -3,9 +3,14 @@ module.exports = {
     index,
     show,
     new: newSkill, // "new" short hand property name cannot be use so we do `new: newSkill`
-    create
+    create,
+    delete: deleteSkill
 };
 
+function deleteSkill(req, res) {
+    Skill.deleteOne(req.params.id);
+    res.redircet('/skills');
+}
 
 function create(req, res) {
     console.log(req.body);
