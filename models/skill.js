@@ -4,8 +4,22 @@ const skills = [
     { id: 139608, skill: 'Python', done: false }
 ];
 
+
 module.exports = {
-    getAll
+    getAll,
+    getOne,
+    create
+};
+function create(skill) {
+    //Add the id
+    skill.id = Date.now() % 1000000;
+    skill.done = false;
+    skills.push(skill)
+}
+
+function getOne(id) {
+    id = parseInt(id);
+    return skills.find(skill => skill.id === id);
 };
 
 function getAll() {
