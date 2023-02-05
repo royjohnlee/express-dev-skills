@@ -15,7 +15,7 @@ function deleteOne(id) {
     id = parseInt(id);
 
     // Find the index for the skill
-    const index = skills.findIndex(skills => skill.id === id)
+    const index = skills.findIndex(skill => skill.id === id)
     skills.splice(index, 1);
 };
 

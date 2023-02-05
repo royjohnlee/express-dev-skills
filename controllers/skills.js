@@ -9,12 +9,12 @@ module.exports = {
 
 function deleteSkill(req, res) {
     Skill.deleteOne(req.params.id);
-    res.redircet('/skills');
+    res.redirect('/skills');
 }
 
 function create(req, res) {
     console.log(req.body);
-    // Models are responisbel for CRUD ing  the data
+    // Models are responisble for CRUD ing  the data
     Skill.create(req.body)
     // ALways do a redirect when data has been changed
     res.redirect('/skills')
